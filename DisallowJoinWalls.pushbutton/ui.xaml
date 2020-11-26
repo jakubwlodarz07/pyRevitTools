@@ -1,0 +1,24 @@
+﻿<!--GUI template - XAML-->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Create Section By Face"
+        Width="370" ResizeMode="NoResize" SizeToContent="Height" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="10">
+        <Grid Margin="0,0,0,5">
+            <Label Content="Section View Family:" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="123" Height="25" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="combobox_SF" ItemsSource="{Binding ViewSectionFamilies}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="190" Height="25" SelectedIndex="0" VerticalContentAlignment="Center" />
+        </Grid>
+        <Grid Margin="0,0,0,5">
+            <Label Content="Section Name:" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="123" Height="25" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="textbox_SN" HorizontalAlignment="Right" Width="190" Height="25" Text="Section_" TextAlignment="Center" VerticalContentAlignment="Center"/>
+        </Grid>
+        <Grid Margin="0,0,0,5">
+            <Label Content="View Depth [in]:" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="123" Height="25" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="textbox_D" HorizontalAlignment="Right" Width="190" Height="25" Text="10" TextAlignment="Center" VerticalContentAlignment="Center"/>
+        </Grid>
+        <Button x:Name="execute_button" Content="Create Section" FontSize="30" VerticalContentAlignment="Center" Height="50" Margin="0,10,0,0" IsEnabled="{Binding ExecuteButtonEnable, UpdateSourceTrigger=PropertyChanged}"/>
+    </StackPanel>
+</Window>
